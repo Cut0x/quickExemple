@@ -27,4 +27,9 @@ db.set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
 // Trouver une valeur
 const bio = db.get("utilisateur_bio")
 console.log(`Ma biographie: ${bio}`)
+
+// Fonction développeur
+if (db.get("utilisateur_admin") === true) {
+  console.log("accès")
+} else console.log("pas accès")
 ```
