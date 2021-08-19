@@ -11,3 +11,20 @@ avec le code
 const db = require("quick.db");
 ```
 pour appeler le module
+
+# Comment bien l'utiliser ?
+```js
+// const Discord [...]
+const db = require("quick.db");
+
+// Ajouter une valeur numérique
+db.add("utilisateur_monnaie", 2)
+
+// Définir une valeur
+db.set("utilisateur_bio", "Coucou, je suis Cut0x !")
+db.set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
+
+// Trouver une valeur
+const bio = db.get("utilisateur_bio")
+console.log(`Ma biographie: ${bio}`)
+```
