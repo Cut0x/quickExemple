@@ -6,6 +6,8 @@
 ```
 npm install quick.db --save
 ```
-avec le code ```js
+avec le code
+```js
 const db = require("quick.db");
-``` pour appeler le module
+```
+pour appeler le module
