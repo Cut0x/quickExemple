@@ -25,7 +25,7 @@ db.subtract("utilisateur_monnaie", 2)
 
 // Définir une valeur
 db.set("utilisateur_bio", "Coucou, je suis Cut0x !")
-db.set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
+db.set("utilisateur_monnaie", 5) // si l'utilisateur était à 10, il sera à 5 !
 
 // Trouver une valeur
 const bio = db.get("utilisateur_bio")
@@ -51,7 +51,7 @@ subtract("utilisateur_monnaie", 2)
 
 // Définir une valeur
 set("utilisateur_bio", "Coucou, je suis Cut0x !")
-set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
+set("utilisateur_monnaie", 5) // si l'utilisateur était à 10, il sera à 5 !
 
 // Trouver une valeur
 const bio = get("utilisateur_bio")
