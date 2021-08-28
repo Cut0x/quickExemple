@@ -20,6 +20,9 @@ const db = require("quick.db");
 // Ajouter une valeur numérique
 db.add("utilisateur_monnaie", 2)
 
+// Retirer une valeur numérique
+db.subtract("utilisateur_monnaie", 2)
+
 // Définir une valeur
 db.set("utilisateur_bio", "Coucou, je suis Cut0x !")
 db.set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
@@ -30,6 +33,32 @@ console.log(`Ma biographie: ${bio}`)
 
 // Fonction développeur
 if (db.get("utilisateur_admin") === true) {
+  console.log("accès")
+} else console.log("pas accès")
+```
+
+# On peut faire plus jolie ?
+On peut mais c'est pas très utile et tout le monde ne le fait pas (car c'est pas très utile)
+```js
+// const Discord [...]
+const { add, set, get, subtract } = require("quick.db");
+
+// Ajouter une valeur numérique
+add("utilisateur_monnaie", 2)
+
+// Retirer une valeur numérique
+subtract("utilisateur_monnaie", 2)
+
+// Définir une valeur
+set("utilisateur_bio", "Coucou, je suis Cut0x !")
+set("utilisateur_bio", 5) // si l'utilisateur était à 10, il sera à 5 !
+
+// Trouver une valeur
+const bio = get("utilisateur_bio")
+console.log(`Ma biographie: ${bio}`)
+
+// Fonction développeur
+if (get("utilisateur_admin") === true) {
   console.log("accès")
 } else console.log("pas accès")
 ```
