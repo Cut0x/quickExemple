@@ -62,3 +62,25 @@ if (get("utilisateur_admin") === true) {
   console.log("accès")
 } else console.log("pas accès")
 ```
+
+# Exemple :
+```js
+const { add } = require("quick.db");
+
+client.on("messageCreate", message => {
+  if (message.content.includes("add")) {
+    db.add(`count_${message.guild.id}`)
+    
+    message.reply({ content: "**+1*** pour ce serveur." })
+  }
+});
+```
+
+# Différence entre la v12 et la v13
+```diff
+- channel.send("coucou", embedLink)
++ channel.send({ content: "coucou", embeds: [ embedLink ] })
+
+- client.on("message", async message {})
++ client.on("messageCreate", async message {})
+``` 
