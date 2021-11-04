@@ -4,7 +4,7 @@
 
 # Comment l'installer ?
 ```
-npm install quick.db --save
+npm i quick.db
 ```
 avec le code
 ```js
@@ -65,15 +65,24 @@ if (get("utilisateur_admin") === true) {
   console.log("accès")
 } else { console.log("pas accès") }
 ```
-Attention, faire cette méthode pour `delete` (`db.delete`) est impossible !
+Attention, faire cette méthode pour `delete` (`db.delete`) est impossible ! *(La méthode ci-dessous est obligatoire (*en vert*))*
+```diff
+- const { delete } = require("quick.db");
+- delete("utilisateur_message")
+
++ const db = require("quick.db");
++ db.delete("utilisateur_message")
+```
 
 # Exemple :
 ```js
 const { add } = require("quick.db");
+// const db = require("quick.db");
 
 client.on("messageCreate", message => {
   if (message.content.startWith("add")) {
-    db.add(`count_${message.guild.id}`, 1)
+    add(`count_${message.guild.id}`, 1)
+    //db.add(`count_${message.guild.id}`, 1)
     
     message.reply({ content: "**+1*** pour ce serveur." })
   }
