@@ -23,6 +23,9 @@ db.add("utilisateur_monnaie", 2)
 // Retirer une valeur numérique
 db.subtract("utilisateur_monnaie", 2)
 
+// Supprimer une valeur numérique
+db.delete("utilisateur_monnaie", 2)
+
 // Définir une valeur
 db.set("utilisateur_bio", "Coucou, je suis Cut0x !")
 db.set("utilisateur_monnaie", 5) // si l'utilisateur était à 10, il sera à 5 !
@@ -34,7 +37,7 @@ console.log(`Ma biographie: ${bio}`)
 // Fonction développeur
 if (db.get("utilisateur_admin") === true) {
   console.log("accès")
-} else console.log("pas accès")
+} else { console.log("pas accès") }
 ```
 
 # On peut faire plus jolie ?
@@ -60,16 +63,17 @@ console.log(`Ma biographie: ${bio}`)
 // Fonction développeur
 if (get("utilisateur_admin") === true) {
   console.log("accès")
-} else console.log("pas accès")
+} else { console.log("pas accès") }
 ```
+Attention, faire cette méthode pour `delete` (`db.delete`) est impossible !
 
 # Exemple :
 ```js
 const { add } = require("quick.db");
 
 client.on("messageCreate", message => {
-  if (message.content.includes("add")) {
-    db.add(`count_${message.guild.id}`)
+  if (message.content.startWith("add")) {
+    db.add(`count_${message.guild.id}`, 1)
     
     message.reply({ content: "**+1*** pour ce serveur." })
   }
